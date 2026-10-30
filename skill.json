@@ -1,0 +1,66 @@
+{
+  "name": "genpark-agentic-commerce-dynamic-b2b-early-payment-discount-skill",
+  "version": "1.0.0",
+  "title": "B2B Dynamic Early Payment Discounting & Working Capital Arbiter Skill",
+  "description": "Dynamic Early Payment Discounting (2/10 Net 30 annualized APR yield), working capital cash-flow optimization, and buyer-supplier liquidity arbitrage. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "early-payment-discount",
+    "working-capital",
+    "dynamic-discounting",
+    "b2b-fintech",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "evaluate_early_payment_discount_apr",
+      "description": "Compute effective annualized APR yield from trade credit discount terms (e.g. 2/10 Net 30).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "discount_pct": {
+            "type": "number"
+          },
+          "discount_days": {
+            "type": "integer"
+          },
+          "net_due_days": {
+            "type": "integer"
+          },
+          "invoice_amount_usd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "discount_pct",
+          "discount_days",
+          "net_due_days",
+          "invoice_amount_usd"
+        ]
+      }
+    },
+    {
+      "name": "adjudicate_treasury_liquidity_arbitrage",
+      "description": "Arbitrage early payment return against corporate treasury short-term yield (T-Bills / money market).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "early_discount_apr_pct": {
+            "type": "number"
+          },
+          "corporate_cost_of_capital_pct": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "early_discount_apr_pct",
+          "corporate_cost_of_capital_pct"
+        ]
+      }
+    }
+  ]
+}
